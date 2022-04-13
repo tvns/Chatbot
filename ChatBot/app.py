@@ -64,9 +64,14 @@ def BotInit():
     bot = ChatBot("Dexter",
                   logic_adapters=['chatterbot.logic.BestMatch',
                                   'chatterbot.logic.MathematicalEvaluation'])
+    
+    
+    bot.set_trainer(ChatterBotCorpusTrainer)
+    bot.train("chatterbot.corpus.english")
     # Training bot
-    trainer = ChatterBotCorpusTrainer(bot)
-    trainer.train("chatterbot.corpus.english")
+    #trainer = ChatterBotCorpusTrainer(bot)
+    #trainer.train("chatterbot.corpus.english")
+    
 
 
 def Chatbot(query):
