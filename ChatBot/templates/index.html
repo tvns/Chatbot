@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="static/css/Website_CSS.css"/>
+	</head>
+	<body>
+		<div class = 'Chatbot'>
+			<form action="{{url_for('answer')}}" method="POST">
+				<label class="Font" for='Chatbot'><h3>Dexter:</h3><br>
+				<textarea id="cb_id" name="chatbot" rows="30" cols="100" readonly>{% for an in ans %}{{ an[0]}} : {{ an[1] }}&#13;{% endfor %}</textarea><br><br>
+				<label class="Font" for='ques'>Tell Here:</label><br><br>
+				<input class= 'Query' type="text" id="q_id" name="query" size="109" autofocus/><br><br>
+				<input class="Ask" type="submit" value="Ask" size = "20"/>
+			</form>
+		</div>
+	</body>
+</html>
